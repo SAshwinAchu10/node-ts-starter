@@ -22,7 +22,7 @@ export function initializeApp() {
   Sentry.init({ dsn: process.env.SENTRY });
   app.use(Sentry.Handlers.requestHandler());
   app.use(Sentry.Handlers.errorHandler());
-  
+
   app.all('*', (req: any, res: any, next: any) => {
     if (WHITELISTED_URLS.includes(req.path)) return next();
     return auth.authenticate((err: any, user: any, info: any) => {
@@ -48,7 +48,7 @@ export function initializeApp() {
   });
 
   app.get('/swagger.json', function(req, res) {
-    res.sendFile(path.join(__dirname + '../../api-docs/paycards-swagger.json'));
+    res.sendFile(path.join(__dirname + '../../api-docs/swagger.json'));
   });
   app.get('/swagger-ui', function(req, res) {
     res.sendFile(path.join(__dirname + '../../api-docs/swagger.html'));
