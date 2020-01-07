@@ -5,6 +5,7 @@ import * as path from 'path';
 import router from './routes';
 import { eventContext } from 'aws-serverless-express/middleware';
 import * as mongoose from 'mongoose';
+import * as Sentry from '@sentry/node';
 import CONFIG from './config/config';
 import AuthService from './service/auth.service';
 import { WHITELISTED_URLS } from './config/security.config';
@@ -18,6 +19,10 @@ export function initializeApp() {
   app.use(urlencoded({ extended: true }));
   app.use(eventContext());
   app.use(auth.initialize());
+  Sentry.init({ dsn: process.env.SENTRY });
+  app.use(Sentry.Handlers.requestHandler());
+  app.use(Sentry.Handlers.errorHandler());
+  
   app.all('*', (req: any, res: any, next: any) => {
     if (WHITELISTED_URLS.includes(req.path)) return next();
     return auth.authenticate((err: any, user: any, info: any) => {
