@@ -1,1 +1,2 @@
-# node-ts-boilerplate-with-auth
+# Node ts Boilerplate
+

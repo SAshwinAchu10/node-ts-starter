@@ -1,0 +1,36 @@
+service: project
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage, 'dev'}
+  region: us-east-1
+  versionFunctions: false
+  environment: ${file(./sls/environment/environment.yml)}
+
+custom:
+  env_vars: ${file(./sls/config/config.${self:provider.stage}.yml)}
+  base_path_mapping:
+    dev: 'dev'
+    stage: 'stage'
+    prod: 'prod'
+
+plugins:  
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  exclude:
+    - "**/*.ts"
+    - "test/**"
+    - "scripts/**"
+    - ".vscode/**"
+    - "*"
+
+functions:
+  http:
+    handler: src/provider/lambda.http
+    timeout: 5
+    events:
+      - http: ANY /
+      - http: ANY /{proxy+}

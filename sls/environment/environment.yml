@@ -1,0 +1,8 @@
+stage: ${self:provider.stage}
+DB_HOST: '${self:custom.env_vars.database.host}'
+DB_PORT: '${self:custom.env_vars.database.port}'
+DB_NAME: '${self:custom.env_vars.database.name}'
+DB_USERNAME: '${self:custom.env_vars.database.username}'
+DB_PASSWORD: '${self:custom.env_vars.database.password}'
+JWT_EXPIRATION_DAYS: '${self:custom.env_vars.jwt.expiration_days}'
+JWT_SECRET: '${self:custom.env_vars.jwt.secret}'

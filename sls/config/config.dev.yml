@@ -1,0 +1,13 @@
+app:
+  paycode_index_length: 5
+
+database:
+  host: ashwin.mongodb.net
+  port: 27017
+  name: test
+  username: admin
+  password: admin
+
+jwt:
+  expiration_days: 2
+  secret: project-dev
