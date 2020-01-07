@@ -11,10 +11,8 @@
   "scripts": {
     "format": "prettier --write --config .prettierrc.yaml '**/*.ts'",
     "clean": "rm -f src/*.js",
-    "test": "jest && tsc --noEmit",
+    "test": "node test --noEmit",
     "start": "ts-node src/provider/local.ts",
-    "build": "yarn clean && jest && tsc",
-    "package": "yarn build && serverless package",
     "deploy": "serverless deploy"
   },
   "dependencies": {
