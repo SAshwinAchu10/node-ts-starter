@@ -1,0 +1,12 @@
+{
+    "full_name": "Ashwin Achu",
+    "email": "achu10@live.in",
+    "github_username": "SAshwinAchu10",
+    "project_name": "Node ts Boilerplate",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_') }}",
+    "project_short_description": "Node js Boilerplate contains all the boilerplate you need to create a REST API.",
+    "pypi_username": "{{ cookiecutter.github_username }}",
+    "version": "0.0.1",
+    "create_author_file": "y",
+    "open_source_license": ["MIT", "BSD", "ISCL", "Apache Software License 2.0", "Not open source"]
+}
