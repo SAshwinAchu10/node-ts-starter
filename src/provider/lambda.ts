@@ -1,4 +1,3 @@
-require('source-map-support').install();
 import { createServer, proxy } from 'aws-serverless-express';
 import { Context } from 'aws-lambda';
 import { initializeApp } from '../app';
