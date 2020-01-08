@@ -37,7 +37,7 @@ $ npm start
 ### Docker
 Node ts boilerplate is very easy to install and deploy in a Docker container.
 
-By default, the Docker will expose port 3000, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
+By default, the Docker will expose port 8080, so change this within the Dockerfile if necessary. When ready, simply use the Dockerfile to build the image.
 
 ```sh
 cd node-ts-starter
@@ -45,10 +45,10 @@ docker build -t PROJECT:${package.json.version} .
 ```
 This will create the server image and pull in the necessary dependencies. Be sure to swap out `${package.json.version}` with the actual version of PROJECT.
 
-Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 3000 of the host to port 3000 of the Docker (or whatever port was exposed in the Dockerfile):
+Once done, run the Docker image and map the port to whatever you wish on your host. In this example, we simply map port 8080 of the host to port 8080 of the Docker (or whatever port was exposed in the Dockerfile):
 
 ```sh
-docker run -d -p 3000:3080 --restart="always" PROJECT:${package.json.version}
+docker run -d -p 8080:8080 --restart="always" PROJECT:${package.json.version}
 ```
 
 Verify the deployment by navigating to your server address in your preferred browser.
