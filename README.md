@@ -4,6 +4,8 @@
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://#)
 
+[![CodeFactor](https://www.codefactor.io/repository/github/sashwinachu10/node-ts-starter/badge/master)](https://www.codefactor.io/repository/github/sashwinachu10/node-ts-starter/overview/master)
+
 This is a Node ts boilerplate that helps starters to quickly grab and use the template code provided.
 This boilerplate code is packed up with components such below
   - Swagger 2.0
